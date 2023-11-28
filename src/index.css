@@ -1,0 +1,23 @@
+/* defaults */
+
+button {
+    border: none;
+    box-shadow: 1px 3px 10px gray;
+    border-radius: 25px;
+    background-color: rgb(15, 167, 15);
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+button:hover {
+    background-color: rgb(16, 182, 16);
+    cursor: pointer;
+    color: white;
+}
+
+button:active {
+    background-color: rgb(14, 133, 14);
+    cursor: grabbing;
+    top: 2px;
+}
