@@ -47,7 +47,7 @@ function Demo() {
             <Routes>
               <Route element={<Navigate to="/dialog" />} path="/" />
               {navItems.map(({ component: SectionComponent, path }) => (
-                <Route element={<SectionComponent />} path={path} />
+                <Route element={<SectionComponent />} key={path} path={path} />
               ))}
             </Routes>
           </div>

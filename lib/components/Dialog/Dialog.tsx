@@ -1,19 +1,17 @@
-import { FC, PropsWithChildren, ReactNode, useEffect, useRef } from "react";
+import { FC, PropsWithChildren, useEffect, useRef } from "react";
 
 type DialogProps = PropsWithChildren<{
-  backDropClickCallBack?: () => void;
-  children: ReactNode | ReactNode[];
-  className?: string;
-  isOpen: boolean;
-  style?: object;
+  backDropClickCallBack?: (e: React.MouseEvent<HTMLDialogElement>) => void;
+  isOpen?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLDialogElement>) => void;
 }>;
 
 export const Dialog: FC<DialogProps> = ({
   backDropClickCallBack,
   children,
-  className,
   isOpen = false,
-  style = {},
+  onClick,
+  ...rest
 }) => {
   const dialogRef = useRef<null | HTMLDialogElement>(null);
 
@@ -31,17 +29,16 @@ export const Dialog: FC<DialogProps> = ({
         e.clientX < dialogDimensions.left ||
         e.clientX > dialogDimensions.right)
     ) {
-      if (backDropClickCallBack) backDropClickCallBack();
+      if (backDropClickCallBack) backDropClickCallBack(e);
     }
+  }
+  function handleOnClick(e: React.MouseEvent<HTMLDialogElement>) {
+    if (onClick) onClick(e);
+    if (backDropClickCallBack) handleBackDropClickCallBack(e);
   }
 
   return (
-    <dialog
-      className={className}
-      ref={dialogRef}
-      onClick={handleBackDropClickCallBack}
-      style={style}
-    >
+    <dialog onClick={handleOnClick} ref={dialogRef} {...rest}>
       {children}
     </dialog>
   );
