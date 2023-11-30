@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React-commonponents
 
-Currently, two official plugins are available:
+Description:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React-commonponents is a collection of commonly used react components with none to minimal styling. The goal of this library is to lessen repeatition and make react development easier.
 
-## Expanding the ESLint configuration
+Why It's Cool:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Easy Components: Get simple and ready-to-use lighweight components that many websites use, like sliders and carousel.
 
-- Configure the top-level `parserOptions` property like this:
+Your Style, Your Way: You have the freedom to add your own style or use it seamlessly with your existing designs. No need to start from scratch.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Saves Time: It's a quick way to add features without spending a lot of time building them. These components are like shortcuts for developers.
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/CEMcode404/react-commonponents.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd react-commonponents
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+Build library
+
+```bash
+  npm run build
+```
+
+Start the server to play with the demo
+
+```bash
+  npm run dev
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test-ct
+```
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+

@@ -1,0 +1,35 @@
+.demo-page__nav {
+    box-sizing: border-box;
+    display: inline-block;
+    border-right: 1px gray solid;
+    padding: 1rem;
+    width: 250px;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.demo-page__nav-item {
+    border-radius: 5px;
+    margin: 0;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.demo-page__nav-item--active {
+    background-color: gray;
+    color: white;
+}
+
+.demo-page__main {
+    display: flex;
+}
+
+.demo-page__component-demo {
+    margin: 0;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.demo-page__h1 {
+    margin-top: 0;
+}
