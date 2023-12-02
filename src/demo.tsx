@@ -7,41 +7,44 @@ import {
 } from "react-router-dom";
 
 import DialogDemo from "./components/DialogDemo";
+import ImageViewerDemo from "./components/ImageViewerDemo";
 import "./demo.css";
 
 function Demo() {
   const navigate = useNavigate();
-  let { pathname } = useLocation();
+  let { pathname: currentPathName } = useLocation();
 
-  pathname = pathname.replace("/", "");
+  const isCurrentPathRoot = currentPathName === "/";
   const navItems = [
-    { component: DialogDemo, title: "Dialog", path: "/dialog" },
+    { component: DialogDemo, path: "/dialog" },
+    { component: ImageViewerDemo, path: "/image-viewer" },
   ];
 
   return (
     <div className="demo-page">
       <main className="demo-page__main">
         <aside aria-label="demo page navigation" className="demo-page__nav">
-          {navItems.map(({ title, path }) => (
+          {navItems.map(({ path }) => (
             <p
               className={`demo-page__nav-item ${
-                isIdenticalString(pathname, title)
+                isIdenticalString(currentPathName, path)
                   ? "demo-page__nav-item--active"
                   : ""
               }`}
-              key={title}
+              key={path}
               onClick={() => {
                 navigate(path);
               }}
             >
-              {title}
+              {capitalizeWords("-", path.replace("/", ""))}
             </p>
           ))}
         </aside>
 
         <div className="demo-page__component-demo">
           <h1 className="demo-page__h1">
-            {pathname && capitalizeWords("-", pathname)}
+            {!isCurrentPathRoot &&
+              capitalizeWords("-", currentPathName.replace("/", ""))}
           </h1>
           <div>
             <Routes>
