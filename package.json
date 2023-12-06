@@ -16,6 +16,8 @@
     "preview": "vite preview",
     "pretest-ct": "node ./scripts/pretest-ct.js",
     "test-ct": "playwright test -c playwright-ct.config.ts",
+    "pretest-ct-ui": "node ./scripts/pretest-ct.js",
+    "test-ct-ui": "playwright test -c playwright-ct.config.ts --ui",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -37,6 +39,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
+    "style-to-object": "^1.0.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.6.3",

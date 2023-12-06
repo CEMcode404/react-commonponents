@@ -8,6 +8,7 @@ import {
 
 import DialogDemo from "./components/DialogDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
+import SliderDemo from "./components/SliderDemo";
 import "./demo.css";
 
 function Demo() {
@@ -18,6 +19,7 @@ function Demo() {
   const navItems = [
     { component: DialogDemo, path: "/dialog" },
     { component: ImageViewerDemo, path: "/image-viewer" },
+    { component: SliderDemo, path: "/slider" },
   ];
 
   return (
