@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import DialogDemo from "./components/DialogDemo";
+import DropdownDemo from "./components/DropdownDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
 import SliderDemo from "./components/SliderDemo";
 import "./demo.css";
@@ -18,6 +19,7 @@ function Demo() {
   const isCurrentPathRoot = currentPathName === "/";
   const navItems = [
     { component: DialogDemo, path: "/dialog" },
+    { component: DropdownDemo, path: "/dropdown" },
     { component: ImageViewerDemo, path: "/image-viewer" },
     { component: SliderDemo, path: "/slider" },
   ];
