@@ -9,6 +9,7 @@ import {
 import DialogDemo from "./components/DialogDemo";
 import DropdownDemo from "./components/DropdownDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
+import PaginationDemo from "./components/PaginationDemo";
 import SliderDemo from "./components/SliderDemo";
 import "./demo.css";
 
@@ -21,6 +22,7 @@ function Demo() {
     { component: DialogDemo, path: "/dialog" },
     { component: DropdownDemo, path: "/dropdown" },
     { component: ImageViewerDemo, path: "/image-viewer" },
+    { component: PaginationDemo, path: "/pagination" },
     { component: SliderDemo, path: "/slider" },
   ];
 
