@@ -11,6 +11,8 @@ import DropdownDemo from "./components/DropdownDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
 import PaginationDemo from "./components/PaginationDemo";
 import SliderDemo from "./components/SliderDemo";
+import SearchBarDemo from "./components/SearchBarDemo";
+
 import "./demo.css";
 
 function Demo() {
@@ -24,6 +26,7 @@ function Demo() {
     { component: ImageViewerDemo, path: "/image-viewer" },
     { component: PaginationDemo, path: "/pagination" },
     { component: SliderDemo, path: "/slider" },
+    { component: SearchBarDemo, path: "/search-bar" },
   ];
 
   return (
