@@ -8,6 +8,7 @@ import {
 
 import DialogDemo from "./components/DialogDemo";
 import DropdownDemo from "./components/DropdownDemo";
+import InViewDemo from "./components/InviewDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
 import PaginationDemo from "./components/PaginationDemo";
 import SliderDemo from "./components/SliderDemo";
@@ -23,6 +24,7 @@ function Demo() {
   const navItems = [
     { component: DialogDemo, path: "/dialog" },
     { component: DropdownDemo, path: "/dropdown" },
+    { component: InViewDemo, path: "/inview" },
     { component: ImageViewerDemo, path: "/image-viewer" },
     { component: PaginationDemo, path: "/pagination" },
     { component: SliderDemo, path: "/slider" },
