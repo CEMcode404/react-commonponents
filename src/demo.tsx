@@ -8,7 +8,7 @@ import {
 
 import DialogDemo from "./components/DialogDemo";
 import DropdownDemo from "./components/DropdownDemo";
-import InViewDemo from "./components/InviewDemo";
+import InViewDemo from "./components/InViewDemo";
 import ImageViewerDemo from "./components/ImageViewerDemo";
 import PaginationDemo from "./components/PaginationDemo";
 import SliderDemo from "./components/SliderDemo";
