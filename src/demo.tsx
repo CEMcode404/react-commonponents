@@ -6,6 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import CarouselDemo from "./components/CarouselDemo";
 import DialogDemo from "./components/DialogDemo";
 import DropdownDemo from "./components/DropdownDemo";
 import InViewDemo from "./components/InViewDemo";
@@ -22,6 +23,7 @@ function Demo() {
 
   const isCurrentPathRoot = currentPathName === "/";
   const navItems = [
+    { component: CarouselDemo, path: "/carousel" },
     { component: DialogDemo, path: "/dialog" },
     { component: DropdownDemo, path: "/dropdown" },
     { component: InViewDemo, path: "/inview" },

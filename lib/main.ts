@@ -1,3 +1,4 @@
+export { Carousel } from './components/Carousel/carousel';
 export { Dialog } from './components/Dialog/Dialog.tsx';
 export { Dropdown} from "./components/DropDown/Dropdown.tsx"
 export { InView } from './components/InView/InView.tsx';
