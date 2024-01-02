@@ -24,14 +24,6 @@ export const Carousel: FC<CarouselProps> = ({
   speed = "7s",
   width = "100%",
 }) => {
-  document.documentElement.style.setProperty("--carousel-gap", gap);
-  document.documentElement.style.setProperty("--carousel-speed", speed);
-  document.documentElement.style.setProperty("--carousel-width", width);
-  document.documentElement.style.setProperty(
-    "--carousel-direction",
-    direction === "LEFT" ? "none" : "reverse"
-  );
-
   const carouselRef = useRef<null | HTMLDivElement>(null);
   const contentCarouselRef = useRef<null | HTMLDivElement>(null);
   const [carouselWidths, setCarouselWidths] = useState<CarouselWidths>({
@@ -40,6 +32,19 @@ export const Carousel: FC<CarouselProps> = ({
   });
   const [isDuplicateHidden, setIsDuplicateHidden] = useState(true);
   const timeOutIdRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.style.setProperty("--carousel-gap", gap);
+      carousel.style.setProperty("--carousel-speed", speed);
+      carousel.style.setProperty("--carousel-width", width);
+      carousel.style.setProperty(
+        "--carousel-direction",
+        direction === "LEFT" ? "none" : "reverse"
+      );
+    }
+  }, [gap, speed, width, direction]);
 
   useEffect(() => {
     const children = contentCarouselRef.current?.children;
