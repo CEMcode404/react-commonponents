@@ -19,8 +19,14 @@
     display: none;
 }
 
-.slider__contents-wrapper .slider-item {
+[data-slider-item=true] {
+    flex-grow: 0;
     flex-shrink: 0;
+    margin-right: var(--slider-gap);
+}
+
+.slider__contents-wrapper :last-child {
+    margin-right: 0;
 }
 
 .slider__left-arrow-wrapper {

@@ -2,15 +2,8 @@ import { FC, PropsWithChildren, useEffect, useRef } from "react";
 
 import arrowRight from "../../assets/arrow-right.webp";
 import arrowLeft from "../../assets/arrow-left.webp";
-import parse from "style-to-object";
 
 import styles from "./slider.module.css";
-
-type DefaultStyle = {
-  flexGrow?: number;
-  flexShrink?: number;
-  marginRight?: number | string;
-};
 
 interface SliderProps extends PropsWithChildren {
   gap?: string;
@@ -18,20 +11,19 @@ interface SliderProps extends PropsWithChildren {
 
 export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
   const contentSliderRef = useRef<null | HTMLDivElement>(null);
-  // This defaultStyling can be overidden manually by putting style property directly to the element
-  // you want to override
-  const defaultStyle: DefaultStyle = {
-    flexGrow: 0,
-    flexShrink: 0,
-    marginRight: gap,
-  };
 
-  // Injected the default style directly to the real dom instead of the virtual dom
-  // to avoid the the issue of default style not applying if the
-  // a functional component or its outer element doesn't contain style attribute
   useEffect(() => {
     if (contentSliderRef.current)
-      injectDefaultStyleToDom(contentSliderRef.current.children, defaultStyle);
+      contentSliderRef.current.style.setProperty("--slider-gap", gap);
+  }, [gap]);
+
+  useEffect(() => {
+    if (contentSliderRef.current)
+      injectAttributeTo(
+        contentSliderRef.current.children,
+        "data-slider-item",
+        "true"
+      );
   }, [children]);
 
   function scrollLeft() {
@@ -84,46 +76,10 @@ export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
   );
 };
 
-function injectDefaultStyleToDom(
+function injectAttributeTo(
   children: HTMLCollection,
-  style: DefaultStyle
+  attributeName: string,
+  value: string
 ) {
-  const lastChild = children.length - 1;
-
-  for (let i = 0; i < children.length; i++) {
-    const fetchedElementStyle = children[i].getAttribute("style") as string;
-
-    // last element should have 0 right margin
-    if (i === lastChild)
-      children[i].setAttribute(
-        "style",
-        convertObjectToCssString(
-          Object.assign(
-            {},
-            style,
-            { marginRight: 0 },
-            parse(fetchedElementStyle)
-          )
-        )
-      );
-    else
-      children[i].setAttribute(
-        "style",
-        convertObjectToCssString(
-          Object.assign({}, style, parse(fetchedElementStyle))
-        )
-      );
-  }
-}
-
-function convertObjectToCssString(object: object) {
-  return `${Object.entries(object)
-    .map(
-      ([key, value]) =>
-        `${key
-          .replace(/([A-Z])/g, "-$1")
-          .toLowerCase()
-          .trim()}: ${value}`
-    )
-    .join("; ")};`;
+  for (const child of children) child.setAttribute(attributeName, value);
 }
