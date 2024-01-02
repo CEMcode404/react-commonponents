@@ -34,11 +34,12 @@ export const Carousel: FC<CarouselProps> = ({
 
   const carouselRef = useRef<null | HTMLDivElement>(null);
   const contentCarouselRef = useRef<null | HTMLDivElement>(null);
-  const [isDuplicateHidden, setIsDuplicateHidden] = useState(true);
   const [carouselWidths, setCarouselWidths] = useState<CarouselWidths>({
     content: undefined,
     container: undefined,
   });
+  const [isDuplicateHidden, setIsDuplicateHidden] = useState(true);
+  const timeOutIdRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const children = contentCarouselRef.current?.children;
@@ -46,9 +47,8 @@ export const Carousel: FC<CarouselProps> = ({
     if (children) {
       injectAttributeTo(children, "data-carousel-item", "true");
 
-      if (!isDuplicateHidden) {
+      if (!isDuplicateHidden)
         injectAriaHiddenToDuplicates(children, children.length / 2);
-      }
     }
   }, [children, isDuplicateHidden]);
 
@@ -72,18 +72,22 @@ export const Carousel: FC<CarouselProps> = ({
   }, [isDuplicateHidden]);
 
   function updateCarouselWidths() {
-    const content = contentCarouselRef.current?.scrollWidth as number;
-    const container = carouselRef.current?.offsetWidth;
+    clearTimeout(timeOutIdRef.current);
 
-    isDuplicateHidden
-      ? setCarouselWidths({
-          content,
-          container,
-        })
-      : setCarouselWidths({
-          content: content / 2,
-          container,
-        });
+    timeOutIdRef.current = setTimeout(() => {
+      const content = contentCarouselRef.current?.scrollWidth as number;
+      const container = carouselRef.current?.offsetWidth;
+
+      isDuplicateHidden
+        ? setCarouselWidths({
+            content,
+            container,
+          })
+        : setCarouselWidths({
+            content: content / 2,
+            container,
+          });
+    }, 1000);
   }
 
   useEffect(() => {
