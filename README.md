@@ -1,64 +1,29 @@
+# React-commonponents :
 
-# React-commonponents
+**_Your Go-To React Components Library_**
 
-Description:
+Developed to eliminate repetitive component building, React-commonponents is a lightweight, personal React library turned open-source. Save time with battle-tested components, constantly expanding to meet evolving React trends.
 
-React-commonponents is a collection of commonly used react components with none to minimal styling. The goal of this library is to lessen repeatition and make react development easier.
+## Why React-commonponents?
 
-Why It's Cool:
+**Avoid Repetition**: Break the cycle with a diverse set of easily integratable React components.
 
-Easy Components: Get simple and ready-to-use lighweight components that many websites use, like sliders and carousel.
+**Personal Library, Shared**: Empower your React projects with my time-saving toolkit.
 
-Your Style, Your Way: You have the freedom to add your own style or use it seamlessly with your existing designs. No need to start from scratch.
+**Battle-Tested Selection**: Proven components used in real-world applications.
 
-Saves Time: It's a quick way to add features without spending a lot of time building them. These components are like shortcuts for developers.
-## Run Locally
+**Ongoing Development**: Regular updates ensure alignment with React best practices.
 
-Clone the project
+## What to Expect:
 
-```bash
-  git clone https://github.com/CEMcode404/react-commonponents.git
-```
+**Lightweight Design**: Optimal performance for faster web applications.
 
-Go to the project directory
+**Easy Customization**: Tailor components effortlessly to match your project's style.
 
-```bash
-  cd react-commonponents
-```
+For comprehensive documentation, visit the [Wiki](https://github.com/CEMcode404/react-commonponents/wiki). Explore the documentation, start coding with react-commonponents today.
 
-Install dependencies
-
-```bash
-  npm install
-```
-Build library
-
-```bash
-  npm run build
-```
-
-Start the server to play with the demo
-
-```bash
-  npm run dev
-```
-
-
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  npm run test-ct
-```
-
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
+Happy coding! 🚀
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
