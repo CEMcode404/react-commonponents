@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.224" height="32.224" viewBox="0 0 32.224 32.224">
+   <style>
+    :hover {
+      cursor: pointer;
+    }
+    :active {
+      cursor: grabbing;
+    }
+  </style>
+  <g id="_7754968_media_player_button_magnifier_search_find_icon" data-name="7754968_media player_button_magnifier_search_find_icon" transform="translate(-30.88 -30.88)">
+    <path id="Path_2" data-name="Path 2" d="M55.807,52l-.761.761L53.186,50.9A12.51,12.51,0,1,0,50.9,53.185l1.862,1.86-.76.763,7.3,7.3,3.8-3.8Zm-5.635-1.829A9.616,9.616,0,0,1,43.329,53h0a9.677,9.677,0,1,1,0-19.354h0a9.681,9.681,0,0,1,6.845,16.524Z" transform="translate(0 0)" fill="#fff"/>
+    <path id="Path_3" data-name="Path 3" d="M107.176,99.66h0a7.526,7.526,0,1,0,0,15.051h0a7.526,7.526,0,1,0,0-15.051Z" transform="translate(-63.848 -63.857)" fill="#fff"/>
+  </g>
+</svg>

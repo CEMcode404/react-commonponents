@@ -1,10 +1,18 @@
-import { FC, PropsWithChildren, useEffect, useRef } from "react";
+import {
+  DialogHTMLAttributes,
+  FC,
+  PropsWithChildren,
+  useEffect,
+  useRef,
+} from "react";
 
-type DialogProps = PropsWithChildren<{
+interface DialogProps
+  extends DialogHTMLAttributes<HTMLDialogElement>,
+    PropsWithChildren {
   backDropClickCallBack?: (e: React.MouseEvent<HTMLDialogElement>) => void;
   isOpen?: boolean;
   onClick?: (e: React.MouseEvent<HTMLDialogElement>) => void;
-}>;
+}
 
 export const Dialog: FC<DialogProps> = ({
   backDropClickCallBack,

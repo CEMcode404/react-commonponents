@@ -6,42 +6,58 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import CarouselDemo from "./components/CarouselDemo";
 import DialogDemo from "./components/DialogDemo";
+import DropdownDemo from "./components/DropdownDemo";
+import InViewDemo from "./components/InViewDemo";
+import ImageViewerDemo from "./components/ImageViewerDemo";
+import PaginationDemo from "./components/PaginationDemo";
+import SliderDemo from "./components/SliderDemo";
+import SearchBarDemo from "./components/SearchBarDemo";
+
 import "./demo.css";
 
 function Demo() {
   const navigate = useNavigate();
-  let { pathname } = useLocation();
+  let { pathname: currentPathName } = useLocation();
 
-  pathname = pathname.replace("/", "");
+  const isCurrentPathRoot = currentPathName === "/";
   const navItems = [
-    { component: DialogDemo, title: "Dialog", path: "/dialog" },
+    { component: CarouselDemo, path: "/carousel" },
+    { component: DialogDemo, path: "/dialog" },
+    { component: DropdownDemo, path: "/dropdown" },
+    { component: InViewDemo, path: "/inview" },
+    { component: ImageViewerDemo, path: "/image-viewer" },
+    { component: PaginationDemo, path: "/pagination" },
+    { component: SliderDemo, path: "/slider" },
+    { component: SearchBarDemo, path: "/search-bar" },
   ];
 
   return (
     <div className="demo-page">
       <main className="demo-page__main">
         <aside aria-label="demo page navigation" className="demo-page__nav">
-          {navItems.map(({ title, path }) => (
+          {navItems.map(({ path }) => (
             <p
               className={`demo-page__nav-item ${
-                isIdenticalString(pathname, title)
+                isIdenticalString(currentPathName, path)
                   ? "demo-page__nav-item--active"
                   : ""
               }`}
-              key={title}
+              key={path}
               onClick={() => {
                 navigate(path);
               }}
             >
-              {title}
+              {capitalizeWords("-", path.replace("/", ""))}
             </p>
           ))}
         </aside>
 
         <div className="demo-page__component-demo">
           <h1 className="demo-page__h1">
-            {pathname && capitalizeWords("-", pathname)}
+            {!isCurrentPathRoot &&
+              capitalizeWords("-", currentPathName.replace("/", ""))}
           </h1>
           <div>
             <Routes>

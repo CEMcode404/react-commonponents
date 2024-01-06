@@ -1,0 +1,20 @@
+.pagination {
+    overflow: hidden;
+}
+
+.pagination__ul {
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination__li {
+    padding: .5rem;
+    border-radius: 5px;
+    margin: 3px;
+    background-color: white;
+    cursor: pointer;
+}

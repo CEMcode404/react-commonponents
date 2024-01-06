@@ -6,6 +6,7 @@
     width: 250px;
     overflow-x: hidden;
     height: 100vh;
+    flex-shrink: 0;
 }
 
 .demo-page__nav-item {
@@ -28,6 +29,7 @@
     margin: 0;
     padding: 1rem;
     flex-grow: 1;
+    overflow: hidden;
 }
 
 .demo-page__h1 {
