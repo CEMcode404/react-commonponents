@@ -16,7 +16,7 @@ interface SearchBarProps<T> {
     inputValue: string;
     resolveCallback: (data: T[]) => void;
     waitForCallback: () => Waiting;
-  }) => T[] | Waiting;
+  }) => T[] | Promise<T[]> | Waiting;
   onChangeDelay?: number;
   placeholder?: string;
 }
@@ -73,7 +73,8 @@ export const SearchBar = <T,>({
     setSearchResults([]);
   }
 
-  function showSearchResults(data: T[]) {
+  async function showSearchResults(data: T[] | Promise<T[]>) {
+    data = await data;
     setIsTyping(false);
 
     if (data && Array.isArray(data) && data.length > 0) {
@@ -92,11 +93,11 @@ export const SearchBar = <T,>({
   }
 
   function handleOnBlur() {
-    //Set time out give enough time so that onclick functions in the search results can be executed before closing
+    // Set time out give enough time so that onclick functions in the search results can be executed before closing
     setTimeout(() => {
       setIsTyping(false);
       setIsSearchResultsHidden(true);
-    }, 100);
+    }, 150);
   }
 
   return (
