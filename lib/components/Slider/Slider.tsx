@@ -6,10 +6,15 @@ import arrowLeft from "../../assets/arrow-left.webp";
 import styles from "./slider.module.css";
 
 interface SliderProps extends PropsWithChildren {
+  className?: string;
   gap?: string;
 }
 
-export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
+export const Slider: FC<SliderProps> = ({
+  children,
+  className = "",
+  gap = "1rem",
+}) => {
   const contentSliderRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
   }
 
   return (
-    <div className={`slider ${styles.slider}`}>
+    <div className={`${styles.slider} ${className}`}>
       <div
         aria-label="previous button"
         className={styles["left-arrow-wrapper"]}

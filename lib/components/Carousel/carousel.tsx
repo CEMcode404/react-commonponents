@@ -10,6 +10,7 @@ type CarouselWidths = {
 
 interface CarouselProps extends PropsWithChildren {
   blurEdges?: boolean;
+  className?: string;
   direction?: CarouselDirection;
   gap?: string;
   speed?: string;
@@ -18,6 +19,7 @@ interface CarouselProps extends PropsWithChildren {
 
 export const Carousel: FC<CarouselProps> = ({
   blurEdges = true,
+  className = "",
   children,
   direction = "LEFT",
   gap = "1rem",
@@ -108,7 +110,7 @@ export const Carousel: FC<CarouselProps> = ({
 
   return (
     <div
-      className={styles.carousel}
+      className={`${styles.carousel} ${className}`}
       data-carousel-blur-edge={blurEdges}
       ref={carouselRef}
     >
