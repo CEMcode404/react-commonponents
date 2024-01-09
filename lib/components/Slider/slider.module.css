@@ -1,5 +1,6 @@
 .slider {
     position: relative;
+    width: var(--slider-width);
 }
 
 .children-wrapper {
