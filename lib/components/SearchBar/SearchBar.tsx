@@ -16,7 +16,7 @@ interface SearchBarProps<T> {
     inputValue: string;
     resolveCallback: (data: T[]) => void;
     waitForCallback: () => Waiting;
-  }) => T[] | Waiting;
+  }) => T[] | Promise<T[]> | Waiting;
   onChangeDelay?: number;
   placeholder?: string;
 }
@@ -73,7 +73,8 @@ export const SearchBar = <T,>({
     setSearchResults([]);
   }
 
-  function showSearchResults(data: T[]) {
+  async function showSearchResults(data: T[] | Promise<T[]>) {
+    data = await data;
     setIsTyping(false);
 
     if (data && Array.isArray(data) && data.length > 0) {
@@ -92,19 +93,19 @@ export const SearchBar = <T,>({
   }
 
   function handleOnBlur() {
-    //Set time out give enough time so that onclick functions in the search results can be executed before closing
+    // Set time out give enough time so that onclick functions in the search results can be executed before closing
     setTimeout(() => {
       setIsTyping(false);
       setIsSearchResultsHidden(true);
-    }, 100);
+    }, 150);
   }
 
   return (
     <div className={`${style["search-bar"]} ${className}`}>
-      <div className={style["search-bar__input-wrapper"]}>
+      <div className={style["input-wrapper"]}>
         <input
           autoComplete="off"
-          className={style["search-bar__input"]}
+          className={style.input}
           disabled={disabled}
           id={id}
           onBlur={handleOnBlur}
@@ -116,16 +117,16 @@ export const SearchBar = <T,>({
           value={inputValue}
         />
 
-        <div className={style["search-bar__popups"]}>
+        <div className={style.popups}>
           {isTyping && (
-            <div className={style["search-bar__typing"]}>
+            <div className={style["is-typing-notif"]}>
               <p>typing...</p>
             </div>
           )}
 
           {!(isSearchResultsHidden || searchResults.length < 1) && (
             <div
-              className={style["search-bar__suggestion-list"]}
+              className={style["search-results"]}
               data-testid="search results"
             >
               {searchResults.map((searchResult, index) =>
@@ -141,7 +142,7 @@ export const SearchBar = <T,>({
         <img
           alt="search icon"
           style={{ background: findIconColor }}
-          className={style["search-bar__find-icon"]}
+          className={style["find-icon"]}
           src={findIcon}
         />
       )}

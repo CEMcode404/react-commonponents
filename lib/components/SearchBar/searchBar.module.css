@@ -4,20 +4,20 @@
     align-items: center;
 }
 
-.search-bar__input {
+.input {
     box-sizing: border-box;
     padding: .5rem;
     width: 100%;
     border-radius: 5px;
 }
 
-.search-bar__input-wrapper {
+.input-wrapper {
     display: flex; 
     flex-direction: column; 
     flex-grow: 1;
 }
 
-.search-bar__typing {
+.is-typing-notif {
     border: none;
     background-color: white;
     border-radius: 5px;
@@ -30,7 +30,7 @@
     z-index: 1;
 }
 
-.search-bar__find-icon {
+.find-icon {
     aspect-ratio: 1/1;
     border-radius: 5px;
     box-sizing: border-box;
@@ -38,7 +38,7 @@
     margin-left: 5px;
 }
 
-.search-bar__suggestion-list {
+.search-results {
     border: none;
     background-color: white;
     border-radius: 5px;
@@ -52,7 +52,7 @@
     z-index: 1;
 }
 
-.search-bar__popups {
+.popups {
     position: relative;
     width: 100%; 
 }

@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 
-.pagination__ul {
+.ul {
     font-size: 1rem;
     width: 100%;
     display: flex;
@@ -11,7 +11,7 @@
     padding: 0;
 }
 
-.pagination__li {
+.li {
     padding: .5rem;
     border-radius: 5px;
     margin: 3px;

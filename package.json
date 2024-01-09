@@ -1,7 +1,8 @@
 {
   "name": "react-commonponents",
-  "private": true,
-  "version": "0.0.0",
+  "description": "A library of commonly used react components.Developed to eliminate repetitive component building, React-commonponents is a lightweight, personal React library turned open-source. Save time with battle-tested components, constantly expanding to meet evolving React trends.",
+  "private": "false",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -46,5 +47,16 @@
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "license": "MIT",
+  "keywords": ["react", "components", "react-components", "react components"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CEMcode404/react-commonponents.git"
+  },
+  "homepage": "https://github.com/CEMcode404/react-commonponents#readme",
+  "bugs": {
+    "url": "https://github.com/CEMcode404/react-commonponents/issues"
+  }
+
 }

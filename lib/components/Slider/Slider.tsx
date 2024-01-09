@@ -6,16 +6,26 @@ import arrowLeft from "../../assets/arrow-left.webp";
 import styles from "./slider.module.css";
 
 interface SliderProps extends PropsWithChildren {
+  className?: string;
   gap?: string;
+  width?: string;
 }
 
-export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
+export const Slider: FC<SliderProps> = ({
+  children,
+  className = "",
+  gap = "1rem",
+  width = "100%",
+}) => {
   const contentSliderRef = useRef<null | HTMLDivElement>(null);
+  const sliderRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    if (contentSliderRef.current)
-      contentSliderRef.current.style.setProperty("--slider-gap", gap);
-  }, [gap]);
+    if (sliderRef.current) {
+      sliderRef.current.style.setProperty("--slider-gap", gap);
+      sliderRef.current.style.setProperty("--slider-width", width);
+    }
+  }, [gap, width]);
 
   useEffect(() => {
     if (contentSliderRef.current)
@@ -43,34 +53,23 @@ export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
   }
 
   return (
-    <div className={`slider ${styles.slider}`}>
+    <div className={`${styles.slider} ${className}`} ref={sliderRef}>
       <div
         aria-label="previous button"
-        className={styles["slider__left-arrow-wrapper"]}
+        className={styles["left-arrow-wrapper"]}
         onClick={scrollLeft}
       >
-        <img
-          alt="left arrow"
-          className={styles["slider__arrow"]}
-          src={arrowLeft}
-        />
+        <img alt="left arrow" className={styles.arrow} src={arrowLeft} />
       </div>
-      <div
-        className={styles["slider__contents-wrapper"]}
-        ref={contentSliderRef}
-      >
+      <div className={styles["children-wrapper"]} ref={contentSliderRef}>
         {children}
       </div>
       <div
         aria-label="next button"
-        className={styles["slider__right-arrow-wrapper"]}
+        className={styles["right-arrow-wrapper"]}
         onClick={scrollRight}
       >
-        <img
-          alt="right arrow"
-          className={styles["slider__arrow"]}
-          src={arrowRight}
-        />
+        <img alt="right arrow" className={styles.arrow} src={arrowRight} />
       </div>
     </div>
   );
