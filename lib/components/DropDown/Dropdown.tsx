@@ -56,7 +56,7 @@ export const Dropdown: FC<DropdownProps> = ({
 
   return (
     <div
-      className={`${style["dropdown__contents-container"]} ${className}`}
+      className={`${style.dropdown} ${className}`}
       ref={containerRef}
       onTransitionEnd={handleTransitionEnd}
       style={{
@@ -65,7 +65,7 @@ export const Dropdown: FC<DropdownProps> = ({
         minHeight,
       }}
     >
-      <div className={style.dropdown__contents} ref={contentsRef}>
+      <div className={style["children-wrapper"]} ref={contentsRef}>
         {children}
       </div>
     </div>

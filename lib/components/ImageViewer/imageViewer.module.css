@@ -1,5 +1,5 @@
 
-.image-viewer {
+.dialog {
     outline: none;
     box-sizing: border-box;
     border: none;
@@ -9,18 +9,18 @@
     width: 100%;
 }
 
-.image-viewer::backdrop {
+.dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.884);
 }
 
-.image-viewer__img {
+.images {
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
     box-shadow:  0 5px 15px gray;
 }
 
-.image-viewer__container {
+.image-viewer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
     height: 100%;
 }
 
-.image-viewer__close-bttn-wrapper {
+.close-bttn-wrapper {
     position: fixed;
     top: 0;
     right: 0;
@@ -37,24 +37,24 @@
     margin: 1rem;
 }
 
-.image-viewer__close-bttn-wrapper:hover {
+.close-bttn-wrapper:hover {
     background-color: rgb(228, 228, 228);
     cursor: pointer;
 }
 
-.image-viewer__close-bttn-wrapper:active {
+.close-bttn-wrapper:active {
     background-color: rgb(201, 201, 201);
     cursor: grabbing;
 }
 
-.image-viewer__close-bttn {
+.close-bttn {
     height: 15px;
     aspect-ratio: 1/1;
     font-size: 2rem;
     padding: .6rem .7rem;
 }
 
-.image-viewer__next-arrow {
+.next-arrow {
     padding: 0 1rem;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@
     right: 0;
 }
 
-.image-viewer__prev-arrow {
+.prev-arrow {
     padding: 0 1rem;
     display: flex;
     align-items: center;
@@ -75,7 +75,7 @@
     top: 0;
 }
 
-.image-viewer__arrow {
+.arrow {
     border-radius: 50%;
     padding: .5rem .9rem;
     background-color: white;
@@ -83,16 +83,16 @@
     aspect-ratio: .6 / 1;
 }
 
-.image-viewer__arrow:hover {
+.arrow:hover {
     cursor: pointer;    
     background-color: rgb(228, 228, 228);
 }
 
-.image-viewer__arrow:active {
+.arrow:active {
     cursor: grabbing;
     background-color: rgb(201, 201, 201);
 }
 
-.image-viewer__error {
+.error-message {
     color: white;
 }

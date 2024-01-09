@@ -58,7 +58,7 @@ export const Pagination: FC<PaginationProps> = ({
 
       {itemsCount > maxItemsPerPage && (
         <nav className={`${style.pagination} ${className}`}>
-          <ul className={style.pagination__ul}>
+          <ul className={style.ul}>
             {paginate(
               calculatePageNo(),
               itemsCount,
@@ -66,7 +66,7 @@ export const Pagination: FC<PaginationProps> = ({
               noOfPageVisible
             ).map((pageNo) => (
               <li
-                className={style.pagination__li}
+                className={style.li}
                 key={pageNo}
                 onClick={() => setCurrentPageNo(pageNo)}
                 style={

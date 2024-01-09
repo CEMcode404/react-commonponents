@@ -46,31 +46,20 @@ export const Slider: FC<SliderProps> = ({ children, gap = "1rem" }) => {
     <div className={`slider ${styles.slider}`}>
       <div
         aria-label="previous button"
-        className={styles["slider__left-arrow-wrapper"]}
+        className={styles["left-arrow-wrapper"]}
         onClick={scrollLeft}
       >
-        <img
-          alt="left arrow"
-          className={styles["slider__arrow"]}
-          src={arrowLeft}
-        />
+        <img alt="left arrow" className={styles.arrow} src={arrowLeft} />
       </div>
-      <div
-        className={styles["slider__contents-wrapper"]}
-        ref={contentSliderRef}
-      >
+      <div className={styles["children-wrapper"]} ref={contentSliderRef}>
         {children}
       </div>
       <div
         aria-label="next button"
-        className={styles["slider__right-arrow-wrapper"]}
+        className={styles["right-arrow-wrapper"]}
         onClick={scrollRight}
       >
-        <img
-          alt="right arrow"
-          className={styles["slider__arrow"]}
-          src={arrowRight}
-        />
+        <img alt="right arrow" className={styles.arrow} src={arrowRight} />
       </div>
     </div>
   );

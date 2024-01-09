@@ -108,12 +108,12 @@ export const Carousel: FC<CarouselProps> = ({
 
   return (
     <div
-      className={`${styles.carousel}`}
+      className={styles.carousel}
       data-carousel-blur-edge={blurEdges}
       ref={carouselRef}
     >
       <div
-        className={styles["carousel__contents-wrapper"]}
+        className={styles["children-wrapper"]}
         data-carousel-scroll={false}
         ref={contentCarouselRef}
       >

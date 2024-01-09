@@ -48,17 +48,14 @@ export const ImageViewer: FC<ImageViewerProps> = ({
   }
 
   return (
-    <Dialog
-      className={`${styles["image-viewer"]} ${className}`}
-      isOpen={isOpen}
-    >
+    <Dialog className={`${styles.dialog} ${className}`} isOpen={isOpen}>
       {imgSrcs && (
-        <div className={styles["image-viewer__container"]}>
-          <div className={styles["image-viewer__prev-arrow"]}>
+        <div className={styles["image-viewer"]}>
+          <div className={styles["prev-arrow"]}>
             <img
               alt="arrow-left"
               aria-label="previous button"
-              className={styles["image-viewer__arrow"]}
+              className={styles.arrow}
               onClick={previous}
               src={arrowLeft}
             />
@@ -67,7 +64,7 @@ export const ImageViewer: FC<ImageViewerProps> = ({
             index === currentImage ? (
               <img
                 alt=""
-                className={styles["image-viewer__img"]}
+                className={styles.images}
                 crossOrigin={crossOrigin}
                 data-testid="image on display"
                 key={index}
@@ -76,25 +73,25 @@ export const ImageViewer: FC<ImageViewerProps> = ({
             ) : null
           )}
           {isNoImageSrcs && (
-            <p className={styles["image-viewer__error"]}>No image/s</p>
+            <p className={styles["error-message"]}>No image/s</p>
           )}
-          <div className={styles["image-viewer__next-arrow"]}>
+          <div className={styles["next-arrow"]}>
             <img
               alt="arrow-right"
               aria-label="next button"
-              className={styles["image-viewer__arrow"]}
+              className={styles.arrow}
               onClick={next}
               src={arrowRight}
             />
           </div>
           <div
             aria-label="close button"
-            className={styles["image-viewer__close-bttn-wrapper"]}
+            className={styles["close-bttn-wrapper"]}
             onClick={onCloseCallBack}
           >
             <img
               alt="arrow-right"
-              className={styles["image-viewer__close-bttn"]}
+              className={styles["close-bttn"]}
               src={closeIcon}
             />
           </div>
