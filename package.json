@@ -1,7 +1,6 @@
 {
   "name": "react-commonponents",
   "description": "A library of commonly used react components.Developed to eliminate repetitive component building, React-commonponents is a lightweight, personal React library turned open-source. Save time with battle-tested components, constantly expanding to meet evolving React trends.",
-  "private": "false",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/main.js",
