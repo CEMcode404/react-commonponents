@@ -1,5 +1,7 @@
 # React-commonponents :
 
+> **Status:** Archived. This project is no longer maintained. It's kept public as a reference project.
+
 **_Your Go-To React Components Library_**
 
 Developed to eliminate repetitive component building, React-commonponents is a lightweight, personal React library turned open-source. Save time with battle-tested components, constantly expanding to meet evolving React trends.
